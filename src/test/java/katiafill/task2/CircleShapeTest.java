@@ -27,6 +27,12 @@ class CircleShapeTest {
     @Test
     void description() {
         CircleShape shape = new CircleShape(5);
-        System.out.println(shape.description());
+        String lineSeparator = System.lineSeparator();
+        assertEquals(shape.description(),
+                "Название: Круг" + lineSeparator +
+                "Площадь: 78,54" + lineSeparator +
+                "Периметр: 31,42" + lineSeparator +
+                "Радиус: 5,00" + lineSeparator +
+                "Диаметр: 10,00" + lineSeparator);
     }
 }
