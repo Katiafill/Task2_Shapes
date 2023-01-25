@@ -11,12 +11,12 @@ public abstract class Shape {
     abstract double perimeter();
 
     String description() {
-        StringBuilder desc = new StringBuilder(50);
+        DescriptionBuilder builder = new DescriptionBuilder();
 
-        desc.append("Название: " + name());
-        desc.append("Площадь: " + square());
-        desc.append("Периметр: " + perimeter());
+        builder.appendProperty("Название", name());
+        builder.appendProperty("Площадь", square());
+        builder.appendProperty("Периметр", perimeter());
 
-        return desc.toString();
+        return builder.description();
     }
 }

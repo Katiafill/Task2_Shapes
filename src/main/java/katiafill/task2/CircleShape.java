@@ -24,12 +24,11 @@ public class CircleShape extends Shape {
 
     @Override
     String description() {
-        StringBuilder desc = new StringBuilder(100);
+        DescriptionBuilder builder = new DescriptionBuilder(super.description());
 
-        desc.append(super.description());
-        desc.append("Радиус: " + radius);
-        desc.append("Диаметр: " + diameter());
+        builder.appendProperty("Радиус", radius);
+        builder.appendProperty("Диаметр", diameter());
 
-        return desc.toString();
+        return builder.description();
     }
 }
