@@ -4,7 +4,7 @@ public abstract class Shape {
     ShapeType type;
 
     String name() {
-        return type.name();
+        return type.getName();
     }
 
     abstract double square();
