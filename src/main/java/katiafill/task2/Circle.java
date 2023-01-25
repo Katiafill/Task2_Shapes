@@ -1,9 +1,9 @@
 package katiafill.task2;
 
-public class CircleShape extends Shape {
+public class Circle extends Shape {
     private final double radius;
 
-    CircleShape(double radius) {
+    Circle(double radius) {
         type = ShapeType.CIRCLE;
         this.radius = radius;
     }
