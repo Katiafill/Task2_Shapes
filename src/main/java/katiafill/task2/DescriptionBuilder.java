@@ -2,7 +2,7 @@ package katiafill.task2;
 
 public class DescriptionBuilder {
 
-    private StringBuilder builder;
+    private final StringBuilder builder;
     private String lineSeparator = System.lineSeparator();
 
     DescriptionBuilder() {
@@ -15,12 +15,16 @@ public class DescriptionBuilder {
     }
 
     void appendProperty(String name, String value) {
-        builder.append(name + ": " + value);
+        builder.append(name)
+                .append(": ")
+                .append(value);
         builder.append(lineSeparator);
     }
 
     void appendProperty(String name, double value) {
-        builder.append(name + ": " + value);
+        builder.append(name)
+                .append(": ")
+                .append(String.format("%.2f", value));
         builder.append(lineSeparator);
     }
 
