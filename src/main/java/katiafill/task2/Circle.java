@@ -1,9 +1,10 @@
 package katiafill.task2;
 
 public class Circle extends Shape {
-    private final double radius;
+    final double radius;
 
     Circle(double radius) {
+        assert(radius > 0);
         type = ShapeType.CIRCLE;
         this.radius = radius;
     }

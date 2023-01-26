@@ -6,6 +6,7 @@ public class Rectangle extends Shape {
     final double height;
 
     Rectangle(double width, double height) {
+        assert(width > 0 && height > 0);
         type = ShapeType.RECTANGLE;
 
         // Короткая сторона - ширина, длинная - длина.
