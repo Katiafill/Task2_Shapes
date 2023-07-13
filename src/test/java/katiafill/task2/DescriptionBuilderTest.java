@@ -36,4 +36,20 @@ public class DescriptionBuilderTest {
                         "Ширина: 3,00 см" + lineSeparator +
                         "Диагональ: 5,00 см" + lineSeparator);
     }
+
+    @Test
+    void triangleDescription() {
+        Triangle shape = new Triangle(3, 4, 5);
+        TriangleDescriptionBuilder builder = new TriangleDescriptionBuilder(shape);
+        builder.build();
+
+        assertEquals(builder.description(),
+                "Название: Треугольник" + lineSeparator +
+                        "Площадь: 6,00 кв. см" + lineSeparator +
+                        "Периметр: 12,00 см" + lineSeparator +
+                        "Стороны: " + lineSeparator +
+                        "3,00 см - 36,87°" + lineSeparator +
+                        "4,00 см - 53,13°" + lineSeparator +
+                        "5,00 см - 90,00°" + lineSeparator);
+    }
 }

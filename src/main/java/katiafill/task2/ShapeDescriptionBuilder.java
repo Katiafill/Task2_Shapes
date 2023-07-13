@@ -2,9 +2,9 @@ package katiafill.task2;
 
 public abstract class ShapeDescriptionBuilder {
 
-    private final StringBuilder builder;
-    private final String lineSeparator = System.lineSeparator();
-    private final String nameSeparator = ":";
+    protected final StringBuilder builder;
+    protected final String lineSeparator = System.lineSeparator();
+    protected final String nameSeparator = ":";
     protected Shape shape;
 
     ShapeDescriptionBuilder(Shape shape) {
