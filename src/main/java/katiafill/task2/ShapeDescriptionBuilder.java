@@ -29,7 +29,7 @@ public abstract class ShapeDescriptionBuilder {
 
     private void buildCommonDescription() {
         appendProperty("Название", shape.name());
-        appendProperty("Площадь", shape.square());
+        appendProperty("Площадь", shape.square(), Units.SQUARE);
         appendProperty("Периметр", shape.perimeter());
     }
 
@@ -42,11 +42,11 @@ public abstract class ShapeDescriptionBuilder {
     }
 
     protected void appendProperty(String name, double value) {
-        builder.append(name)
-                .append(nameSeparator)
-                .append(" ")
-                .append(String.format("%.2f", value));
-        builder.append(lineSeparator);
+        appendProperty(name, value, Units.SIMPLE);
+    }
+
+    protected void appendProperty(String name, double value, Units unit) {
+        appendProperty(name, String.format("%.2f %s", value, unit.getName()));
     }
 
 }
