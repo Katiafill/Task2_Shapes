@@ -9,14 +9,8 @@ public class Rectangle extends Shape {
         assert(width > 0 && height > 0);
         type = ShapeType.RECTANGLE;
 
-        // Короткая сторона - ширина, длинная - длина.
-        if (width < height) {
-            this.width = width;
-            this.height = height;
-        } else {
-            this.width = height;
-            this.height = width;
-        }
+        this.width = width;
+        this.height = height;
     }
 
     @Override
@@ -33,14 +27,4 @@ public class Rectangle extends Shape {
         return Math.sqrt(width * width + height * height);
     }
 
-    @Override
-    String description() {
-        DescriptionBuilder builder = new DescriptionBuilder(super.description());
-
-        builder.appendProperty("Длина", height);
-        builder.appendProperty("Ширина", width);
-        builder.appendProperty("Диагональ", diagonal());
-
-        return builder.description();
-    }
 }

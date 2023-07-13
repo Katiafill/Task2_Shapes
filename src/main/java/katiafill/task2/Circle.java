@@ -23,13 +23,4 @@ public class Circle extends Shape {
         return Math.PI * diameter();
     }
 
-    @Override
-    String description() {
-        DescriptionBuilder builder = new DescriptionBuilder(super.description());
-
-        builder.appendProperty("Радиус", radius);
-        builder.appendProperty("Диаметр", diameter());
-
-        return builder.description();
-    }
 }
