@@ -1,0 +1,39 @@
+package katiafill.task2;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+
+public class DescriptionBuilderTest {
+    private final String lineSeparator = System.lineSeparator();
+
+    @Test
+    void circleDescription() {
+        Circle shape = new Circle(5);
+        CircleDescriptionBuilder builder = new CircleDescriptionBuilder(shape);
+        builder.build();
+
+        assertEquals(builder.description(),
+                "Название: Круг" + lineSeparator +
+                "Площадь: 78,54 кв. см" + lineSeparator +
+                "Периметр: 31,42 см" + lineSeparator +
+                "Радиус: 5,00 см" + lineSeparator +
+                "Диаметр: 10,00 см" + lineSeparator);
+    }
+
+    @Test
+    void rectangleDescription() {
+        Rectangle rect = new Rectangle(3, 4);
+        RectangleDescriptionBuilder builder = new RectangleDescriptionBuilder(rect);
+        builder.build();
+
+        assertEquals(builder.description(),
+                "Название: Прямоугольник" + lineSeparator +
+                        "Площадь: 12,00 кв. см" + lineSeparator +
+                        "Периметр: 14,00 см" + lineSeparator +
+                        "Длина: 4,00 см" + lineSeparator +
+                        "Ширина: 3,00 см" + lineSeparator +
+                        "Диагональ: 5,00 см" + lineSeparator);
+    }
+}

@@ -40,16 +40,4 @@ class RectangleTest {
         assertEquals(rect.diagonal(), 5);
     }
 
-//    @Test
-//    void description() {
-//        Rectangle rect = new Rectangle(3, 4);
-//        String lineSeparator = System.lineSeparator();
-//        assertEquals(rect.description(),
-//                "Название: Прямоугольник" + lineSeparator +
-//                        "Площадь: 12,00" + lineSeparator +
-//                        "Периметр: 14,00" + lineSeparator +
-//                        "Длина: 4,00" + lineSeparator +
-//                        "Ширина: 3,00" + lineSeparator +
-//                        "Диагональ: 5,00" + lineSeparator);
-//    }
 }
