@@ -27,8 +27,8 @@ public class Triangle extends Shape {
         return angle(sideB, sideC, sideA);
     }
 
-    double angleACB() {
-        return  angle(sideA, sideC, sideB);
+    double angleCAB() {
+        return  angle(sideC, sideA, sideB);
     }
 
     @Override
@@ -43,6 +43,6 @@ public class Triangle extends Shape {
     }
 
     private double angle(double a, double b, double c) {
-        return Math.acos((a * a + b * b - c * c) / (2 * a * b));
+        return Math.acos((a * a + b * b - c * c) / (2 * a * b)) * (180 / Math.PI);
     }
 }
