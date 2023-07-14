@@ -9,15 +9,23 @@ class ShapeFactoryTest {
     @Test
     void createCircle() {
         ShapeFactory factory = new CircleShapeFactory();
-        Shape shape = factory.createShape("5");
-        ShapeDescriptionBuilder builder = factory.createBuilder(shape);
-        builder.build();
+        create(factory, "5");
     }
 
     @Test
     void createRectangle() {
         ShapeFactory factory = new RectangleShapeFactory();
-        Shape shape = factory.createShape("3 4");
+        create(factory, "3 4");
+    }
+
+    @Test
+    void createTriangle() {
+        ShapeFactory factory = new TriangleShapeFactory();
+        create(factory, "3 4 5");
+    }
+
+    private static void create(ShapeFactory factory, String args) {
+        Shape shape = factory.createShape(args);
         ShapeDescriptionBuilder builder = factory.createBuilder(shape);
         builder.build();
     }
