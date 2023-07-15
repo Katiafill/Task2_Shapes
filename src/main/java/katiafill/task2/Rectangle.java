@@ -3,28 +3,28 @@ package katiafill.task2;
 public class Rectangle extends Shape {
 
     final double width;
-    final double height;
+    final double length;
 
-    Rectangle(double width, double height) {
-        assert(width > 0 && height > 0);
+    Rectangle(double width, double length) {
+        assert(width > 0 && length > 0);
         type = ShapeType.RECTANGLE;
 
         this.width = width;
-        this.height = height;
+        this.length = length;
     }
 
     @Override
     double square() {
-        return width * height;
+        return width * length;
     }
 
     @Override
     double perimeter() {
-        return (width + height) * 2;
+        return (width + length) * 2;
     }
 
     double diagonal() {
-        return Math.sqrt(width * width + height * height);
+        return Math.sqrt(width * width + length * length);
     }
 
 }

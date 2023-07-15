@@ -8,8 +8,9 @@ public class RectangleDescriptionBuilder extends ShapeDescriptionBuilder {
 
     @Override
     protected void buildSpecificDescription() {
-        appendProperty("Длина", ((Rectangle)shape).height);
-        appendProperty("Ширина", ((Rectangle)shape).width);
-        appendProperty("Диагональ", ((Rectangle)shape).diagonal());
+        Rectangle rect = (Rectangle)shape;
+        appendProperty("Длина", rect.length);
+        appendProperty("Ширина", rect.width);
+        appendProperty("Диагональ", rect.diagonal());
     }
 }

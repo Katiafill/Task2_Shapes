@@ -8,18 +8,17 @@ class RectangleTest {
 
     @Test
     void sides() {
-        // Проверка, что ширина всегда меньшая сторона, а длина - большая.
         Rectangle rect = new Rectangle(3, 4);
         assertEquals(rect.width, 3);
-        assertEquals(rect.height, 4);
+        assertEquals(rect.length, 4);
 
         rect = new Rectangle(4, 3);
         assertEquals(rect.width, 3);
-        assertEquals(rect.height, 4);
+        assertEquals(rect.length, 4);
 
         rect = new Rectangle(3,3);
         assertEquals(rect.width, 3);
-        assertEquals(rect.height, 3);
+        assertEquals(rect.length, 3);
     }
 
     @Test
