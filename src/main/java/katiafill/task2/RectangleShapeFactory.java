@@ -1,12 +1,21 @@
 package katiafill.task2;
 
-public class RectangleShapeFactory implements ShapeFactory {
+import java.util.List;
+
+public class RectangleShapeFactory extends ShapeFactory {
     @Override
-    public Shape createShape(String args) {
-        String[] params = args.split(" ");
-        double width = Double.parseDouble(params[0]);
-        double height = Double.parseDouble(params[1]);
-        return new Rectangle(width, height);
+    public Shape createShape(List<Double> params) throws IllegalArgumentException {
+        checkNumberOfParameters(params, 2);
+
+        double firstSide = params.get(0);
+        double secondSide = params.get(1);
+        validate(firstSide);
+        validate(secondSide);
+
+        // Длинная сторона длина, короткая - ширина.
+        return secondSide > firstSide ?
+                new Rectangle(firstSide, secondSide) :
+                new Rectangle(secondSide, firstSide);
     }
 
     @Override

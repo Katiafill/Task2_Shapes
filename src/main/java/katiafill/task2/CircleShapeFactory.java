@@ -1,11 +1,16 @@
 package katiafill.task2;
 
-public class CircleShapeFactory implements ShapeFactory {
+import java.util.List;
+
+public class CircleShapeFactory extends ShapeFactory {
 
     @Override
-    public Shape createShape(String args) {
-        String[] params = args.split(" ");
-        double radius = Double.parseDouble(params[0]);
+    public Shape createShape(List<Double> params) throws IllegalArgumentException {
+        checkNumberOfParameters(params, 1);
+
+        double radius = params.get(0);
+        validate(radius);
+
         return new Circle(radius);
     }
 

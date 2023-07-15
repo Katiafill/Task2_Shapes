@@ -8,10 +8,6 @@ public class Triangle extends Shape {
 
     Triangle(double a, double b, double c) {
         assert(a > 0 && b > 0 && c > 0);
-        // Условие треугольника
-        assert(a + b > c);
-        assert(a + c > b);
-        assert(b + c > a);
 
         type = ShapeType.TRIANGLE;
         sideA = a;
