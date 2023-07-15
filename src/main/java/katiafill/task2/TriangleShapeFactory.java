@@ -25,8 +25,9 @@ public class TriangleShapeFactory extends ShapeFactory {
         validate(a);
         validate(b);
         validate(c);
+
         if ( a >= b + c || b >= a + c || c >= a + b ) {
-            new IllegalArgumentException("Incorrect triangle parameters, the triangle condition is not met.");
+            throw new IllegalArgumentException("Incorrect triangle parameters, the triangle condition is not met.");
         }
     }
 }
