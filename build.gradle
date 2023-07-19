@@ -5,7 +5,7 @@ plugins {
 group 'org.example'
 version '1.0-SNAPSHOT'
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
 
