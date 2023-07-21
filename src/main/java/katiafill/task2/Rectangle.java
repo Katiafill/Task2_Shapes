@@ -1,6 +1,10 @@
 package katiafill.task2;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Rectangle extends Shape {
+    public static final Logger logger = LoggerFactory.getLogger(Rectangle.class.getName());
 
     final double width;
     final double length;
@@ -11,6 +15,7 @@ public class Rectangle extends Shape {
 
         this.width = width;
         this.length = length;
+        logger.info("Создан прямоугольник со сторонами " + width + " и " + length + ".");
     }
 
     @Override

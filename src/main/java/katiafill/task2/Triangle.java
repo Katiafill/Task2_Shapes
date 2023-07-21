@@ -1,6 +1,9 @@
 package katiafill.task2;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Triangle extends Shape {
+    public static final Logger logger = LoggerFactory.getLogger(Triangle.class.getName());
 
     final double sideA;
     final double sideB;
@@ -13,6 +16,7 @@ public class Triangle extends Shape {
         sideA = a;
         sideB = b;
         sideC = c;
+        logger.info("Создан треугольник с сторонами " + a + ", " + b + ", " + c + ".");
     }
 
     double angleABC() {

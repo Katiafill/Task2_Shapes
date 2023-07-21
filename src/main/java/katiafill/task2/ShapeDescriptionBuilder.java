@@ -1,11 +1,15 @@
 package katiafill.task2;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public abstract class ShapeDescriptionBuilder {
+    public static final Logger logger = LoggerFactory.getLogger(ShapeDescriptionBuilder.class.getName());
 
     protected final StringBuilder builder;
     protected final String lineSeparator = System.lineSeparator();
     protected final String nameSeparator = ":";
-    protected Shape shape;
+    protected final Shape shape;
 
     ShapeDescriptionBuilder(Shape shape) {
         builder = new StringBuilder(50);
@@ -15,8 +19,10 @@ public abstract class ShapeDescriptionBuilder {
     // -------------- Public ---------------------------------------
 
     void build() {
+        logger.info("Начало формирования описания фигуры.");
         buildCommonDescription();
         buildSpecificDescription();
+        logger.info("Формирование описания завершено.");
     }
 
     String description() {
@@ -28,6 +34,7 @@ public abstract class ShapeDescriptionBuilder {
     protected abstract void buildSpecificDescription();
 
     private void buildCommonDescription() {
+        logger.info("Добавление общей информации.");
         appendProperty("Название", shape.name());
         appendProperty("Площадь", shape.square(), Units.SQUARE);
         appendProperty("Периметр", shape.perimeter());

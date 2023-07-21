@@ -1,12 +1,18 @@
 package katiafill.task2;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Circle extends Shape {
+    public static final Logger logger = LoggerFactory.getLogger(Circle.class.getName());
+
     final double radius;
 
     Circle(double radius) {
         assert(radius > 0);
         type = ShapeType.CIRCLE;
         this.radius = radius;
+        logger.info("Создан круг с радиусом " + radius + ".");
     }
 
     double diameter() {
