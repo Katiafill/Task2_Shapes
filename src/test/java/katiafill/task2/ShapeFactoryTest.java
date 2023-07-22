@@ -10,6 +10,19 @@ class ShapeFactoryTest {
     private final ShapeFactory triangleFactory = new TriangleShapeFactory();
 
     @Test
+    void shapeType() {
+        checkType("CIRCLE", ShapeType.CIRCLE);
+        checkType("RECTANGLE", ShapeType.RECTANGLE);
+        checkType("Triangle", ShapeType.TRIANGLE);
+        checkType("InvalidType", null);
+    }
+
+    private static void checkType(String sType, ShapeType actualType) {
+        ShapeType type = ShapeType.fromString(sType);
+        assertEquals(type, actualType);
+    }
+
+    @Test
     void createCircle() {
         try {
             createShape(circleFactory, List.of(5.0));

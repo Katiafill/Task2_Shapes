@@ -13,4 +13,14 @@ public enum ShapeType {
     public String getName() {
         return name;
     }
+
+    static ShapeType fromString(String sType) {
+        for (ShapeType type : ShapeType.values()) {
+            if (type.name().equalsIgnoreCase(sType)) {
+                return type;
+            }
+        }
+
+        return null;
+    }
 }
