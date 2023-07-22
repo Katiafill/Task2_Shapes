@@ -10,6 +10,16 @@ abstract class ShapeFactory {
     abstract Shape createShape(List<Double> params) throws IllegalArgumentException;
     abstract ShapeDescriptionBuilder createBuilder(Shape shape);
 
+    static ShapeFactory getFactory(ShapeType type) {
+        ShapeFactory factory = null;
+        switch (type) {
+            case CIRCLE -> factory = new CircleShapeFactory();
+            case RECTANGLE -> factory = new RectangleShapeFactory();
+            case TRIANGLE -> factory = new TriangleShapeFactory();
+        }
+        return factory;
+    }
+
     protected void checkNumberOfParameters(List<Double> params, int number) throws IllegalArgumentException {
         logger.info("Проверка количества параметров.");
         int size = params.size();
