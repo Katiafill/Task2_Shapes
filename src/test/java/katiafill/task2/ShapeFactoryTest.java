@@ -5,6 +5,7 @@ import katiafill.task2.factory.CircleShapeFactory;
 import katiafill.task2.factory.RectangleShapeFactory;
 import katiafill.task2.factory.ShapeFactory;
 import katiafill.task2.factory.TriangleShapeFactory;
+import katiafill.task2.models.Rectangle;
 import katiafill.task2.models.Shape;
 import katiafill.task2.models.ShapeType;
 import org.junit.jupiter.api.Test;
@@ -55,6 +56,18 @@ class ShapeFactoryTest {
     void createRectangle() {
         try {
             createShape(rectangleFactory, List.of(3.0, 4.0));
+        } catch (IllegalArgumentException ex) {
+            fail(ex);
+        }
+    }
+
+    @Test
+    void createRectangle2() {
+        try {
+            // Проверить, что правильно выставляется ширина и длина.
+            Rectangle shape = (Rectangle)rectangleFactory.createShape(List.of(4.0, 3.0));
+            assertEquals(shape.width, 3.0);
+            assertEquals(shape.length, 4.0);
         } catch (IllegalArgumentException ex) {
             fail(ex);
         }

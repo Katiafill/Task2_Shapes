@@ -12,14 +12,6 @@ class RectangleTest {
         Rectangle rect = new Rectangle(3, 4);
         assertEquals(rect.width, 3);
         assertEquals(rect.length, 4);
-
-//        rect = new Rectangle(4, 3);
-//        assertEquals(rect.width, 3);
-//        assertEquals(rect.length, 4);
-//
-//        rect = new Rectangle(3,3);
-//        assertEquals(rect.width, 3);
-//        assertEquals(rect.length, 3);
     }
 
     @Test
