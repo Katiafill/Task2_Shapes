@@ -1,5 +1,11 @@
 package katiafill.task2;
 
+import katiafill.task2.builder.CircleDescriptionBuilder;
+import katiafill.task2.builder.RectangleDescriptionBuilder;
+import katiafill.task2.builder.TriangleDescriptionBuilder;
+import katiafill.task2.models.Circle;
+import katiafill.task2.models.Rectangle;
+import katiafill.task2.models.Triangle;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

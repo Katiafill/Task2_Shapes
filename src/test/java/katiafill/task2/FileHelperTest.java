@@ -1,5 +1,6 @@
 package katiafill.task2;
 
+import katiafill.task2.io.FileHelper;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

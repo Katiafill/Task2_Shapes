@@ -1,4 +1,4 @@
-package katiafill.task2;
+package katiafill.task2.builder;
 
 public enum Units {
     SIMPLE("см"),

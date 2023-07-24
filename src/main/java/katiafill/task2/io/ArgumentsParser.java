@@ -1,6 +1,4 @@
-package katiafill.task2;
-
-import java.util.Objects;
+package katiafill.task2.io;
 
 public class ArgumentsParser {
     public final String inputFileName;

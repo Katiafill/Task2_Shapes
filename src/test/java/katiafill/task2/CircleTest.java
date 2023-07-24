@@ -1,5 +1,6 @@
 package katiafill.task2;
 
+import katiafill.task2.models.Circle;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

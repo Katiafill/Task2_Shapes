@@ -1,4 +1,4 @@
-package katiafill.task2;
+package katiafill.task2.models;
 
 public enum ShapeType {
     CIRCLE("Круг"),
@@ -14,7 +14,7 @@ public enum ShapeType {
         return value;
     }
 
-    static ShapeType fromString(String sType) {
+    public static ShapeType fromString(String sType) {
         for (ShapeType type : ShapeType.values()) {
             if (type.name().equalsIgnoreCase(sType)) {
                 return type;

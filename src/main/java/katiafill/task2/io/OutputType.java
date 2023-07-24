@@ -1,4 +1,4 @@
-package katiafill.task2;
+package katiafill.task2.io;
 
 public enum OutputType {
     CONSOLE("-c"),

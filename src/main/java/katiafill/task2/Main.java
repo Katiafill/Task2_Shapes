@@ -1,5 +1,11 @@
 package katiafill.task2;
 
+import katiafill.task2.builder.ShapeDescriptionBuilder;
+import katiafill.task2.factory.ShapeFactory;
+import katiafill.task2.io.ArgumentsParser;
+import katiafill.task2.io.FileHelper;
+import katiafill.task2.io.OutputType;
+import katiafill.task2.io.ShapeParametersParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

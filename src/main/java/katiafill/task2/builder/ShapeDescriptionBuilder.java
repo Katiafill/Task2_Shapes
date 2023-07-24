@@ -1,5 +1,6 @@
-package katiafill.task2;
+package katiafill.task2.builder;
 
+import katiafill.task2.models.Shape;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,19 +12,19 @@ public abstract class ShapeDescriptionBuilder {
     protected final String nameSeparator = ":";
     protected final Shape shape;
 
+    // -------------- Public ---------------------------------------
+
+    public String description() {
+        return builder.toString();
+    }
+
+    // -------------- Protected -------------------------------------
+
     ShapeDescriptionBuilder(Shape shape) {
         builder = new StringBuilder(50);
         this.shape = shape;
         build();
     }
-
-    // -------------- Public ---------------------------------------
-
-    String description() {
-        return builder.toString();
-    }
-
-    // -------------- Protected -------------------------------------
 
     private void build() {
         logger.info("Начало формирования описания фигуры.");

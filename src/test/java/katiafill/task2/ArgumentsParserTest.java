@@ -1,5 +1,7 @@
 package katiafill.task2;
 
+import katiafill.task2.io.ArgumentsParser;
+import katiafill.task2.io.OutputType;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

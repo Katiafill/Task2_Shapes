@@ -1,16 +1,19 @@
-package katiafill.task2;
+package katiafill.task2.factory;
 
+import katiafill.task2.builder.ShapeDescriptionBuilder;
+import katiafill.task2.models.Shape;
+import katiafill.task2.models.ShapeType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.List;
 
-abstract class ShapeFactory {
+public abstract class ShapeFactory {
     public static final Logger logger = LoggerFactory.getLogger(ShapeFactory.class.getName());
 
-    abstract Shape createShape(List<Double> params) throws IllegalArgumentException;
-    abstract ShapeDescriptionBuilder createBuilder(Shape shape);
+    public abstract Shape createShape(List<Double> params) throws IllegalArgumentException;
+    public abstract ShapeDescriptionBuilder createBuilder(Shape shape);
 
-    static ShapeFactory getFactory(ShapeType type) {
+    public static ShapeFactory getFactory(ShapeType type) {
         ShapeFactory factory = null;
         switch (type) {
             case CIRCLE -> factory = new CircleShapeFactory();

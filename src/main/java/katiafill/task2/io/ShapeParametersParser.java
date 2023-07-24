@@ -1,4 +1,6 @@
-package katiafill.task2;
+package katiafill.task2.io;
+
+import katiafill.task2.models.ShapeType;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,7 +11,7 @@ public class ShapeParametersParser {
     public final ShapeType type;
     public final List<Double> parameters;
 
-    ShapeParametersParser(List<String> params) throws IllegalArgumentException {
+    public ShapeParametersParser(List<String> params) throws IllegalArgumentException {
         checkNumberOfParameters(params);
         type = getShapeType(params.get(0));
         parameters = getShapeParameters(params.get(1));

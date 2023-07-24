@@ -1,12 +1,13 @@
-package katiafill.task2;
+package katiafill.task2.builder;
 
+import katiafill.task2.models.Circle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class CircleDescriptionBuilder extends ShapeDescriptionBuilder {
     public static final Logger logger = LoggerFactory.getLogger(CircleDescriptionBuilder.class.getName());
 
-    CircleDescriptionBuilder(Circle shape) {
+    public CircleDescriptionBuilder(Circle shape) {
         super(shape);
     }
 

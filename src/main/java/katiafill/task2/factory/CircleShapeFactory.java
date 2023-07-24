@@ -1,5 +1,9 @@
-package katiafill.task2;
+package katiafill.task2.factory;
 
+import katiafill.task2.builder.CircleDescriptionBuilder;
+import katiafill.task2.builder.ShapeDescriptionBuilder;
+import katiafill.task2.models.Circle;
+import katiafill.task2.models.Shape;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.List;

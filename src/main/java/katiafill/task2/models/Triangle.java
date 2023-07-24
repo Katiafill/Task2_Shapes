@@ -1,15 +1,15 @@
-package katiafill.task2;
+package katiafill.task2.models;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Triangle extends Shape {
     public static final Logger logger = LoggerFactory.getLogger(Triangle.class.getName());
 
-    final double sideA;
-    final double sideB;
-    final double sideC;
+    public final double sideA;
+    public final double sideB;
+    public final double sideC;
 
-    Triangle(double a, double b, double c) {
+    public Triangle(double a, double b, double c) {
         assert(a > 0 && b > 0 && c > 0);
 
         type = ShapeType.TRIANGLE;
@@ -19,26 +19,26 @@ public class Triangle extends Shape {
         logger.info("Создан треугольник с сторонами " + a + ", " + b + ", " + c + ".");
     }
 
-    double angleABC() {
+    public double angleABC() {
         return angle(sideA, sideB, sideC);
     }
 
-    double angleBCA() {
+    public double angleBCA() {
         return angle(sideB, sideC, sideA);
     }
 
-    double angleCAB() {
+    public double angleCAB() {
         return  angle(sideC, sideA, sideB);
     }
 
     @Override
-    double square() {
+    public double square() {
         double p = perimeter() / 2;
         return Math.sqrt(p * (p - sideA) * (p - sideB) * (p - sideC));
     }
 
     @Override
-    double perimeter() {
+    public double perimeter() {
         return sideA + sideB + sideC;
     }
 

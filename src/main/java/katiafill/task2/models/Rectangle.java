@@ -1,4 +1,4 @@
-package katiafill.task2;
+package katiafill.task2.models;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,10 +6,10 @@ import org.slf4j.LoggerFactory;
 public class Rectangle extends Shape {
     public static final Logger logger = LoggerFactory.getLogger(Rectangle.class.getName());
 
-    final double width;
-    final double length;
+    public final double width;
+    public final double length;
 
-    Rectangle(double width, double length) {
+    public Rectangle(double width, double length) {
         assert(width > 0 && length > 0);
         type = ShapeType.RECTANGLE;
 
@@ -19,17 +19,16 @@ public class Rectangle extends Shape {
     }
 
     @Override
-    double square() {
+    public double square() {
         return width * length;
     }
 
     @Override
-    double perimeter() {
+    public double perimeter() {
         return (width + length) * 2;
     }
 
-    double diagonal() {
+    public double diagonal() {
         return Math.sqrt(width * width + length * length);
     }
-
 }

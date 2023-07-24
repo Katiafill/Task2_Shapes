@@ -1,5 +1,12 @@
 package katiafill.task2;
 
+import katiafill.task2.builder.ShapeDescriptionBuilder;
+import katiafill.task2.factory.CircleShapeFactory;
+import katiafill.task2.factory.RectangleShapeFactory;
+import katiafill.task2.factory.ShapeFactory;
+import katiafill.task2.factory.TriangleShapeFactory;
+import katiafill.task2.models.Shape;
+import katiafill.task2.models.ShapeType;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
