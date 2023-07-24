@@ -22,7 +22,7 @@ public class TriangleDescriptionBuilder extends ShapeDescriptionBuilder {
     }
 
     private void appendSideAndAngle(double side, double angle) {
-        builder.append(String.format("%.2f %s - %.2f%s", side, Units.SIMPLE.getName(), angle, Units.DEGREES.getName()));
+        builder.append(String.format("%.2f %s - %.2f%s", side, Units.SIMPLE.getValue(), angle, Units.DEGREES.getValue()));
         builder.append(lineSeparator);
     }
 }

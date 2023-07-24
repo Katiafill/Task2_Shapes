@@ -5,12 +5,12 @@ public enum Units {
     SQUARE("кв. см"),
     DEGREES("°");
 
-    private final String name;
-    Units(String name) {
-        this.name = name;
+    private final String value;
+    Units(String value) {
+        this.value = value;
     }
 
-    public String getName() {
-        return name;
+    public String getValue() {
+        return value;
     }
 }

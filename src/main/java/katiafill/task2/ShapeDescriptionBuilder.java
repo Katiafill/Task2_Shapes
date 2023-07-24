@@ -53,7 +53,7 @@ public abstract class ShapeDescriptionBuilder {
     }
 
     protected void appendProperty(String name, double value, Units unit) {
-        appendProperty(name, String.format("%.2f %s", value, unit.getName()));
+        appendProperty(name, String.format("%.2f %s", value, unit.getValue()));
     }
 
 }
