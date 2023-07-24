@@ -93,6 +93,5 @@ class ShapeFactoryTest {
     private void createShape(ShapeFactory factory, List<Double> params) {
         Shape shape = factory.createShape(params);
         ShapeDescriptionBuilder builder = factory.createBuilder(shape);
-        builder.build();
     }
 }

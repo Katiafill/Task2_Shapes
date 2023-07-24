@@ -14,22 +14,23 @@ public abstract class ShapeDescriptionBuilder {
     ShapeDescriptionBuilder(Shape shape) {
         builder = new StringBuilder(50);
         this.shape = shape;
+        build();
     }
 
     // -------------- Public ---------------------------------------
-
-    void build() {
-        logger.info("Начало формирования описания фигуры.");
-        buildCommonDescription();
-        buildSpecificDescription();
-        logger.info("Формирование описания завершено.");
-    }
 
     String description() {
         return builder.toString();
     }
 
     // -------------- Protected -------------------------------------
+
+    private void build() {
+        logger.info("Начало формирования описания фигуры.");
+        buildCommonDescription();
+        buildSpecificDescription();
+        logger.info("Формирование описания завершено.");
+    }
 
     protected abstract void buildSpecificDescription();
 

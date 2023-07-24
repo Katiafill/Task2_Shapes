@@ -12,7 +12,6 @@ public class DescriptionBuilderTest {
     void circleDescription() {
         Circle shape = new Circle(5);
         CircleDescriptionBuilder builder = new CircleDescriptionBuilder(shape);
-        builder.build();
 
         assertEquals(builder.description(),
                 "Название: Круг" + lineSeparator +
@@ -26,7 +25,6 @@ public class DescriptionBuilderTest {
     void rectangleDescription() {
         Rectangle rect = new Rectangle(3, 4);
         RectangleDescriptionBuilder builder = new RectangleDescriptionBuilder(rect);
-        builder.build();
 
         assertEquals(builder.description(),
                 "Название: Прямоугольник" + lineSeparator +
@@ -41,7 +39,6 @@ public class DescriptionBuilderTest {
     void triangleDescription() {
         Triangle shape = new Triangle(3, 4, 5);
         TriangleDescriptionBuilder builder = new TriangleDescriptionBuilder(shape);
-        builder.build();
 
         assertEquals(builder.description(),
                 "Название: Треугольник" + lineSeparator +
