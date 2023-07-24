@@ -5,13 +5,13 @@ public enum ShapeType {
     RECTANGLE("Прямоугольник"),
     TRIANGLE("Треугольник");
 
-    private final String name;
-    ShapeType(String name) {
-        this.name = name;
+    private final String value;
+    ShapeType(String value) {
+        this.value = value;
     }
 
-    public String getName() {
-        return name;
+    public String getValue() {
+        return value;
     }
 
     static ShapeType fromString(String sType) {
