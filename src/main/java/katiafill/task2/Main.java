@@ -10,19 +10,28 @@ public class Main {
     public static  final Logger logger = LoggerFactory.getLogger(Main.class.getName());
 
     public static void main(String[] args) {
-        String file = "resources\\triangle.txt";
-        String outputFile = "resources\\result.txt";
         try {
-            List<String> params = FileHelper.readFile(file);
-            ShapeParametersParser parser  = new ShapeParametersParser(params);
-            ShapeFactory factory = ShapeFactory.getFactory(parser.type);
-            ShapeDescriptionBuilder builder = factory.createBuilder(factory.createShape(parser.parameters));
-            builder.build();
-            FileHelper.writeFile(outputFile, builder.description());
+            ArgumentsParser parser = new ArgumentsParser(args);
+            ShapeDescriptionBuilder builder = getShapeDescriptionBuilder(parser.inputFileName);
+
+            if (parser.outputType == OutputType.CONSOLE) {
+                System.out.println(builder.description());
+            } else {
+                FileHelper.writeFile(parser.outputFileName, builder.description());
+            }
         } catch (IllegalArgumentException ex) {
-            logger.error("Ошибка создания фигуры, некорректные данные.", ex);
+            logger.error("Неправильные данные.", ex);
         } catch (IOException ex) {
             logger.error("Ошибка чтения данных и файла.", ex);
         }
     }
+
+    private static ShapeDescriptionBuilder getShapeDescriptionBuilder(String inputFileName) throws IOException {
+        List<String> params = FileHelper.readFile(inputFileName);
+        ShapeParametersParser parser  = new ShapeParametersParser(params);
+        ShapeFactory factory = ShapeFactory.getFactory(parser.type);
+        return factory.createBuilder(factory.createShape(parser.parameters));
+    }
+
+
 }
