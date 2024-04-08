@@ -66,8 +66,8 @@ class ShapeFactoryTest {
         try {
             // Проверить, что правильно выставляется ширина и длина.
             Rectangle shape = (Rectangle)rectangleFactory.createShape(List.of(4.0, 3.0));
-            assertEquals(shape.width, 3.0);
-            assertEquals(shape.length, 4.0);
+            assertEquals(shape.getWidth(), 3.0);
+            assertEquals(shape.getLength(), 4.0);
         } catch (IllegalArgumentException ex) {
             fail(ex);
         }

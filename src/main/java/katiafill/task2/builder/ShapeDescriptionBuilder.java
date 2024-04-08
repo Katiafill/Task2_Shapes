@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public abstract class ShapeDescriptionBuilder {
-    public static final Logger logger = LoggerFactory.getLogger(ShapeDescriptionBuilder.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(ShapeDescriptionBuilder.class.getName());
 
     protected final StringBuilder builder;
     protected final String lineSeparator = System.lineSeparator();

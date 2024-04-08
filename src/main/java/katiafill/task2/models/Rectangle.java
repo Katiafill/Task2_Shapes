@@ -4,10 +4,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Rectangle extends Shape {
-    public static final Logger logger = LoggerFactory.getLogger(Rectangle.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(Rectangle.class.getName());
 
-    public final double width;
-    public final double length;
+    private final double width;
+    private final double length;
 
     public Rectangle(double width, double length) {
         assert(width > 0 && length > 0);
@@ -16,6 +16,14 @@ public class Rectangle extends Shape {
         this.width = width;
         this.length = length;
         logger.info("Создан прямоугольник со сторонами " + width + " и " + length + ".");
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public double getLength() {
+        return length;
     }
 
     @Override

@@ -8,13 +8,21 @@ import java.util.stream.Collectors;
 
 public class ShapeParametersParser {
 
-    public final ShapeType type;
-    public final List<Double> parameters;
+    private final ShapeType type;
+    private final List<Double> parameters;
 
     public ShapeParametersParser(List<String> params) throws IllegalArgumentException {
         checkNumberOfParameters(params);
         type = getShapeType(params.get(0));
         parameters = getShapeParameters(params.get(1));
+    }
+
+    public ShapeType getType() {
+        return type;
+    }
+
+    public List<Double> getParameters() {
+        return parameters;
     }
 
     private void checkNumberOfParameters(List<String> params) throws IllegalArgumentException {

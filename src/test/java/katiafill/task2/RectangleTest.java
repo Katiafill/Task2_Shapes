@@ -10,8 +10,8 @@ class RectangleTest {
     @Test
     void sides() {
         Rectangle rect = new Rectangle(3, 4);
-        assertEquals(rect.width, 3);
-        assertEquals(rect.length, 4);
+        assertEquals(rect.getWidth(), 3);
+        assertEquals(rect.getLength(), 4);
     }
 
     @Test

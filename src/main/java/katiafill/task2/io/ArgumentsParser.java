@@ -1,9 +1,9 @@
 package katiafill.task2.io;
 
 public class ArgumentsParser {
-    public final String inputFileName;
-    public final OutputType outputType;
-    public final String outputFileName;
+    private final String inputFileName;
+    private final OutputType outputType;
+    private final String outputFileName;
 
     public ArgumentsParser(String[] args) throws IllegalArgumentException {
         if (args.length < 1) {
@@ -32,5 +32,17 @@ public class ArgumentsParser {
             }
         }
 
+    }
+
+    public String getInputFileName() {
+        return inputFileName;
+    }
+
+    public OutputType getOutputType() {
+        return outputType;
+    }
+
+    public String getOutputFileName() {
+        return outputFileName;
     }
 }

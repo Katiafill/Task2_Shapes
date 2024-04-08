@@ -13,17 +13,17 @@ import java.io.IOException;
 import java.util.List;
 
 public class Main {
-    public static  final Logger logger = LoggerFactory.getLogger(Main.class.getName());
+    private static  final Logger logger = LoggerFactory.getLogger(Main.class.getName());
 
     public static void main(String[] args) {
         try {
             ArgumentsParser parser = new ArgumentsParser(args);
-            ShapeDescriptionBuilder builder = getShapeDescriptionBuilder(parser.inputFileName);
+            ShapeDescriptionBuilder builder = getShapeDescriptionBuilder(parser.getInputFileName());
 
-            if (parser.outputType == OutputType.CONSOLE) {
+            if (parser.getOutputType() == OutputType.CONSOLE) {
                 System.out.println(builder.description());
             } else {
-                FileHelper.writeFile(parser.outputFileName, builder.description());
+                FileHelper.writeFile(parser.getOutputFileName(), builder.description());
             }
         } catch (IllegalArgumentException ex) {
             logger.error("Неправильные данные.", ex);
@@ -35,8 +35,8 @@ public class Main {
     private static ShapeDescriptionBuilder getShapeDescriptionBuilder(String inputFileName) throws IOException {
         List<String> params = FileHelper.readFile(inputFileName);
         ShapeParametersParser parser  = new ShapeParametersParser(params);
-        ShapeFactory factory = ShapeFactory.getFactory(parser.type);
-        return factory.createBuilder(factory.createShape(parser.parameters));
+        ShapeFactory factory = ShapeFactory.getFactory(parser.getType());
+        return factory.createBuilder(factory.createShape(parser.getParameters()));
     }
 
 

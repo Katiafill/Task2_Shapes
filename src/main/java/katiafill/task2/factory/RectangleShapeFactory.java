@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 public class RectangleShapeFactory extends ShapeFactory {
-    public static final Logger logger = LoggerFactory.getLogger(RectangleShapeFactory.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(RectangleShapeFactory.class.getName());
 
     @Override
     public Shape createShape(List<Double> params) throws IllegalArgumentException {

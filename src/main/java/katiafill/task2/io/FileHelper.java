@@ -8,9 +8,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-/// Вспомогательный класс для чтпения и записи в файл
+/// Вспомогательный класс для чтения и записи в файл
 public class FileHelper {
-    public static final Logger logger = LoggerFactory.getLogger(FileHelper.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(FileHelper.class.getName());
 
     public static List<String> readFile(String filePath) throws IOException {
         logger.info("Чтение данных из файла " + filePath + ".");

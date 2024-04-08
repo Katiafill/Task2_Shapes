@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 public abstract class ShapeFactory {
-    public static final Logger logger = LoggerFactory.getLogger(ShapeFactory.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(ShapeFactory.class.getName());
 
     public abstract Shape createShape(List<Double> params) throws IllegalArgumentException;
     public abstract ShapeDescriptionBuilder createBuilder(Shape shape);

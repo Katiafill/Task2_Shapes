@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class RectangleDescriptionBuilder extends ShapeDescriptionBuilder {
-    public static final Logger logger = LoggerFactory.getLogger(RectangleDescriptionBuilder.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(RectangleDescriptionBuilder.class.getName());
 
     public RectangleDescriptionBuilder(Rectangle shape) {
         super(shape);
@@ -15,8 +15,8 @@ public class RectangleDescriptionBuilder extends ShapeDescriptionBuilder {
     protected void buildSpecificDescription() {
         logger.info("Добавление специфической информации о прямоугольнике.");
         Rectangle rect = (Rectangle)shape;
-        appendProperty("Длина", rect.length);
-        appendProperty("Ширина", rect.width);
+        appendProperty("Длина", rect.getLength());
+        appendProperty("Ширина", rect.getWidth());
         appendProperty("Диагональ", rect.diagonal());
     }
 }

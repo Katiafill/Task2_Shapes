@@ -43,9 +43,9 @@ class ArgumentsParserTest {
 
     private void checkParserResult(String[] args, String inputFile, OutputType type, String outputFile) {
         ArgumentsParser parser = new ArgumentsParser(args);
-        assertEquals(parser.inputFileName, inputFile);
-        assertEquals(parser.outputType, type);
-        assertEquals(parser.outputFileName, outputFile);
+        assertEquals(parser.getInputFileName(), inputFile);
+        assertEquals(parser.getOutputType(), type);
+        assertEquals(parser.getOutputFileName(), outputFile);
     }
 
     private void checkErrors(String[] args, String actual) {

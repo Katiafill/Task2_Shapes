@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class TriangleDescriptionBuilder extends ShapeDescriptionBuilder {
-    public static final Logger logger = LoggerFactory.getLogger(TriangleDescriptionBuilder.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(TriangleDescriptionBuilder.class.getName());
 
     public TriangleDescriptionBuilder(Triangle shape) {
         super(shape);
@@ -17,9 +17,9 @@ public class TriangleDescriptionBuilder extends ShapeDescriptionBuilder {
         appendProperty("Стороны", "");
 
         Triangle s = (Triangle)shape;
-        appendSideAndAngle(s.sideA, s.angleBCA());
-        appendSideAndAngle(s.sideB, s.angleCAB());
-        appendSideAndAngle(s.sideC, s.angleABC());
+        appendSideAndAngle(s.getSideA(), s.angleBCA());
+        appendSideAndAngle(s.getSideB(), s.angleCAB());
+        appendSideAndAngle(s.getSideC(), s.angleABC());
     }
 
     private void appendSideAndAngle(double side, double angle) {

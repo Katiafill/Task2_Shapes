@@ -4,15 +4,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Circle extends Shape {
-    public static final Logger logger = LoggerFactory.getLogger(Circle.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(Circle.class.getName());
 
-    public final double radius;
+    private final double radius;
 
     public Circle(double radius) {
         assert(radius > 0);
         type = ShapeType.CIRCLE;
         this.radius = radius;
         logger.info("Создан круг с радиусом " + radius + ".");
+    }
+
+    public double getRadius() {
+        return radius;
     }
 
     public double diameter() {
